@@ -1,11 +1,11 @@
 DROP TABLE IF EXISTS `_board`;
-CREATE TABLE `board`
+CREATE TABLE `_board`
     (
         id BINARY(16) PRIMARY KEY NOT NULL,
         name VARCHAR(255) NOT NULL,
         description VARCHAR(255),
         created DATETIME NOT NULL,
-        responsible_name VARCHAR(255) NOT NULL,
+        responsible_name VARCHAR(255) NOT NULL
 
     );
 DROP TABLE IF EXISTS `_column`;
@@ -19,8 +19,8 @@ CREATE TABLE `_column`
 
         FOREIGN KEY (board_id) REFERENCES `_board`(id)
     );
-DROP TABLE IF EXISTS `_task`;
-CREATE TABLE `_task`
+DROP TABLE IF EXISTS `_card`;
+CREATE TABLE `_card`
     (
         id BINARY(16) PRIMARY KEY NOT NULL,
         priority VARCHAR(255),
