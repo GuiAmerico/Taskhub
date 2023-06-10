@@ -12,8 +12,9 @@ import java.util.UUID;
 public class Board {
 
     private UUID id;
-    private String name;
-    private String description;
+    private String title;
+    private String workspace;
+    private Visibility visibility;
     private LocalDateTime created;
     private Responsible responsible;
     private List<Column> columns = new ArrayList<>();
