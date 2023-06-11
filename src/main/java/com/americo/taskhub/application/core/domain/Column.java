@@ -7,7 +7,7 @@ import java.util.UUID;
 public class Column {
 
     private UUID id;
-    private String name;
+    private String title;
     private int wip;
     private List<Card> cards = new ArrayList<>();
     private Board board;
