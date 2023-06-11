@@ -6,5 +6,5 @@ import com.americo.taskhub.application.core.domain.Card;
 import java.util.UUID;
 
 public interface MoveCardInputPort {
-    void moveCard(UUID columnId , Card card);
+    void moveCard(UUID columnId , UUID cardId);
 }

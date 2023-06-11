@@ -6,5 +6,5 @@ import java.util.List;
 import java.util.UUID;
 
 public interface FilterCardByResponsibleOutputPort {
-    List<Card> filterCard(UUID responsibleId);
+    List<Card> filterCard(String responsibleName);
 }

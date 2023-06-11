@@ -11,7 +11,7 @@ public class Card {
     private State state;
     private Responsible responsible;
     private Set<Tag> tag;
-    private String Description;
+    private String description;
     private Column column;
 
 

@@ -16,7 +16,7 @@ public class FilterCardByResponsibleUseCase implements FilterCardByResponsibleIn
     }
 
     @Override
-    public List<Card> filterCard(UUID responsibleId) {
-        return filterCardByResponsibleOutputPort.filterCard(responsibleId);
+    public List<Card> filterCard(String responsibleName) {
+        return filterCardByResponsibleOutputPort.filterCard(responsibleName);
     }
 }

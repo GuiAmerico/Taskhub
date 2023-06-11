@@ -14,7 +14,7 @@ public class MoveCardUseCase implements MoveCardInputPort {
     }
 
     @Override
-    public void moveCard(UUID columnId, Card card) {
-        moveCardOutputPort.moveCard(columnId, card);
+    public void moveCard(UUID columnId, UUID cardId) {
+        moveCardOutputPort.moveCard(columnId, cardId);
     }
 }
