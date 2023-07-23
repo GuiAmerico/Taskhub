@@ -2,17 +2,18 @@ DROP TABLE IF EXISTS `_board`;
 CREATE TABLE `_board`
     (
         id BINARY(16) PRIMARY KEY NOT NULL,
-        name VARCHAR(255) NOT NULL,
-        description VARCHAR(255),
+        title VARCHAR(255) NOT NULL,
+        workspace VARCHAR(255),
+        visibility VARCHAR(255),
         created DATETIME NOT NULL,
-        responsible_name VARCHAR(255) NOT NULL
+        responsible_name VARCHAR(255)
 
     );
 DROP TABLE IF EXISTS `_column`;
 CREATE TABLE `_column`
     (
         id BINARY(16) PRIMARY KEY NOT NULL,
-        name VARCHAR(255) NOT NULL,
+        title VARCHAR(255) NOT NULL,
         wip INT,
         created DATETIME NOT NULL,
         board_id BINARY(16) NOT NULL,

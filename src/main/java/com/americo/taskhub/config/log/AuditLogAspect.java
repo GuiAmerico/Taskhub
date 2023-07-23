@@ -9,16 +9,14 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.TimeZone;
 
 @Log4j2
 @Aspect
 @Component
 public class AuditLogAspect {
 
-    private static final String LOGGLY_URL = "https://americo.loggly.com/";
+    private static final String LOGGLY_URL = "http://logs-01.loggly.com/inputs/feee8465-cdb3-4d44-9f82-a7d779b787d5/tag/http//";
 
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private final OkHttpClient httpClient = new OkHttpClient();
@@ -27,11 +25,8 @@ public class AuditLogAspect {
     public void logAudit(JoinPoint joinPoint, AuditLog auditLog) {
         String methodName = joinPoint.getSignature().getName();
         String action = auditLog.action();
-        long timestamp = auditLog.timestamp();
-        LocalDateTime date =
-                LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), TimeZone
-                        .getDefault().toZoneId());
-        String logMessage = "Action: " + action + "timestamp" + date + ", Method: " + methodName;
+        LocalDateTime date = LocalDateTime.now();
+        String logMessage = "Action: " + action + ", timestamp" + date + ", Method: " + methodName;
 
         log.info(logMessage);
 
